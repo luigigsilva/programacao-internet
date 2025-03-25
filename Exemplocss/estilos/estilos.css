@@ -1,0 +1,17 @@
+h1{
+    color: blue;
+    font-size: 90px;
+    text-decoration-line: overline;
+    text-decoration-color: BLACK;
+}
+.titulo{
+    color: blueviolet;
+    font-size: 80px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+.cafe{
+    color: crimson;
+    font-weight: 300;
+    
+    
+}
