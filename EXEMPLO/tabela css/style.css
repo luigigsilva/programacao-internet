@@ -1,0 +1,32 @@
+
+    table{
+        border: 3px solid black;
+        border-collapse: collapse;
+        font-size: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+}
+.titulo{
+    border: 3px solid black;
+    text-align: center;
+    background-color: #0D5188;
+    color: white;
+}
+th{
+    border: 3px solid black;
+    text-align: center;
+    background-color: #66C5E3;
+
+}
+.separar{
+    background-color: silver;
+    border: 3px solid black
+    
+}
+.colorir1{
+    background-color: #66C5E3;
+
+}
+.colorir2{
+    background-color: #66C5E3;
+
+}
