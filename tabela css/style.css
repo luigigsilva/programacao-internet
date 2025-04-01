@@ -1,35 +1,33 @@
-
-
     table{
 
-        border: 3px solid black;
+        border: 3px solid white;
         border-collapse: collapse;
-        font-size: 30px;
+        font-size: 12px;
+        width: 600px;
         font-family: Arial, Helvetica, sans-serif;
 }
 .titulo{
-    border: 3px solid black;
+    border: 3px solid white;
     text-align: center;
     background-color: #0D5188;
     color: white;
 }
 th{
-    border: 3px solid black;
+    border: 3px solid white;
     text-align: center;
     background-color: #66C5E3;
-
+}
+td{
+  text-align: center;
 }
 .separar{
     background-color: silver;
-    border: 3px solid black
-    
+    border: 3px solid white
 }
 .colorir1{
     background-color: #C7E7F3;
-    color: #66C5E3;
-
+    color: #0D5188;
 }
 .colorir2{
     background-color: #C7E7F3;
-
 }
