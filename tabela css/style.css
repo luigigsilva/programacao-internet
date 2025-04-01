@@ -1,5 +1,7 @@
 
+
     table{
+
         border: 3px solid black;
         border-collapse: collapse;
         font-size: 30px;
@@ -23,10 +25,11 @@ th{
     
 }
 .colorir1{
-    background-color: #66C5E3;
+    background-color: #C7E7F3;
+    color: #66C5E3;
 
 }
 .colorir2{
-    background-color: #66C5E3;
+    background-color: #C7E7F3;
 
 }
