@@ -1,0 +1,31 @@
+.titulo{
+
+    border: 7px solid red;
+    border-collapse: collapse;
+    font-size: 12px;
+    width: 600px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: chartreuse;
+}
+table{
+    border: 7px solid red;
+    border-collapse: collapse;
+ 
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+    tr{
+        border: 7px solid red;
+        border-collapse: collapse;
+        background-color: white;
+    }
+    td{
+        border: 7px solid red;
+        border-collapse: collapse;
+        height: 50px;
+        width: 100px;
+    }
+    .pequeno{
+        width: 30px;
+    }
