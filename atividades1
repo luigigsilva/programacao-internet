@@ -1,0 +1,173 @@
+<html>
+    <title>Atividades</title>
+</head>
+<body>
+
+    <div>
+        <h1>Meu Cálculo de Troco</h1>
+        Valor pago: <br />
+        <input id="n1" type="number" /> <br />
+        Valor do Produto: <br />
+        <input id="n2" type="number" /><br />
+        <br />
+        <button onclick="subtrair()">Subtrair</button>
+        <br /><br />
+        O Troco é: R$ <span id="troco"></span>
+    </div>
+
+    <hr>
+
+    <h2>1. Calculadora de Valor a Pagar por Quilo</h2>
+    <label for="valorQuilo">Valor do quilo do produto (R$):</label>
+    <input type="number" id="valorQuilo" step="0.01" /><br><br>
+    <label for="quantidadeQuilos">Quantidade de quilos consumidos:</label>
+    <input type="number" id="quantidadeQuilos" step="0.01" /><br><br>
+    <button onclick="calcularValor()">Calcular Valor Total</button>
+    <p id="resultadoValorQuilo"></p>
+
+    <hr>
+
+    <h2>2. Reajuste de Saldo em 1%</h2>
+    <label for="saldo">Informe o saldo atual (R$):</label>
+    <input type="number" id="saldo" step="0.01" /><br><br>
+    <button onclick="reajustarSaldo()">Calcular Reajuste</button>
+    <p id="resultadoReajuste"></p>
+
+    <hr>
+
+    <h2>3. Cálculo de Médias</h2>
+    <label for="num1">Digite o 1º número:</label>
+    <input type="number" id="num1" step="any" /><br><br>
+    <label for="num2">Digite o 2º número:</label>
+    <input type="number" id="num2" step="any" /><br><br>
+    <label for="num3">Digite o 3º número:</label>
+    <input type="number" id="num3" step="any" /><br><br>
+    <button onclick="calcularMedias()">Calcular Médias</button>
+    <p id="resultadoMedias"></p>
+
+    <hr>
+
+    <h2>4. Maior entre dois valores</h2>
+    <label for="valorA">Digite o 1º valor:</label>
+    <input type="number" id="valorA" step="any" /><br><br>
+    <label for="valorB">Digite o 2º valor:</label>
+    <input type="number" id="valorB" step="any" /><br><br>
+    <button onclick="mostrarMaior()">Mostrar Maior Valor</button>
+    <p id="resultadoMaior"></p>
+
+    <hr>
+
+    <h2>5. Menor entre quatro valores</h2>
+    <label for="val1">Digite o 1º valor:</label>
+    <input type="number" id="val1" step="any" /><br><br>
+    <label for="val2">Digite o 2º valor:</label>
+    <input type="number" id="val2" step="any" /><br><br>
+    <label for="val3">Digite o 3º valor:</label>
+    <input type="number" id="val3" step="any" /><br><br>
+    <label for="val4">Digite o 4º valor:</label>
+    <input type="number" id="val4" step="any" /><br><br>
+    <button onclick="mostrarMenor()">Mostrar Menor Valor</button>
+    <p id="resultadoMenor"></p>
+
+    <hr>
+
+    <h2>6. Verificar se um número é ímpar</h2>
+    <label for="numeroImpar">Digite um número:</label>
+    <input type="number" id="numeroImpar" step="1" /><br><br>
+    <button onclick="verificarImpar()">Verificar</button>
+    <p id="resultadoImpar"></p>
+
+<script>
+    function subtrair() {
+        const valorPago = parseFloat(document.getElementById("n1").value);
+        const valorProduto = parseFloat(document.getElementById("n2").value);
+        if (isNaN(valorPago) || isNaN(valorProduto)) {
+            document.getElementById("troco").textContent = "Informe valores válidos.";
+            return;
+        }
+        const troco = valorPago - valorProduto;
+        document.getElementById("troco").textContent = troco.toFixed(2);
+    }
+
+    function calcularValor() {
+        const valorQuilo = parseFloat(document.getElementById("valorQuilo").value);
+        const quantidadeQuilos = parseFloat(document.getElementById("quantidadeQuilos").value);
+        if (isNaN(valorQuilo) || isNaN(quantidadeQuilos)) {
+            document.getElementById("resultadoValorQuilo").textContent = "Por favor, insira valores válidos.";
+            return;
+        }
+        const valorTotal = valorQuilo * quantidadeQuilos;
+        document.getElementById("resultadoValorQuilo").textContent =
+            `O valor total a ser pago é: R$ ${valorTotal.toFixed(2)}`;
+    }
+
+    function reajustarSaldo() {
+        const saldo = parseFloat(document.getElementById("saldo").value);
+        if (isNaN(saldo)) {
+            document.getElementById("resultadoReajuste").textContent = "Por favor, informe um saldo válido.";
+            return;
+        }
+        const saldoReajustado = saldo * 1.01;
+        document.getElementById("resultadoReajuste").textContent =
+            `O saldo com reajuste de 1% é: R$ ${saldoReajustado.toFixed(2)}`;
+    }
+
+    function calcularMedias() {
+        const n1 = parseFloat(document.getElementById("num1").value);
+        const n2 = parseFloat(document.getElementById("num2").value);
+        const n3 = parseFloat(document.getElementById("num3").value);
+        if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+            document.getElementById("resultadoMedias").textContent = "Por favor, preencha todos os números corretamente.";
+            return;
+        }
+        const mediaAritmetica = (n1 + n2 + n3) / 3;
+        const mediaPonderada = (n1 * 2 + n2 * 3 + n3 * 5) / 10;
+        const somaDasMedias = mediaAritmetica + mediaPonderada;
+        const mediaDasMedias = somaDasMedias / 2;
+        document.getElementById("resultadoMedias").innerHTML =
+            `a) Média Aritmética: ${mediaAritmetica.toFixed(2)}<br>` +
+            `b) Média Ponderada (pesos 2, 3, 5): ${mediaPonderada.toFixed(2)}<br>` +
+            `c) Soma das Médias: ${somaDasMedias.toFixed(2)}<br>` +
+            `d) Média das Médias: ${mediaDasMedias.toFixed(2)}`;
+    }
+
+    function mostrarMaior() {
+        const valorA = parseFloat(document.getElementById("valorA").value);
+        const valorB = parseFloat(document.getElementById("valorB").value);
+        if (isNaN(valorA) || isNaN(valorB)) {
+            document.getElementById("resultadoMaior").textContent = "Por favor, insira valores válidos.";
+            return;
+        }
+        const maior = (valorA > valorB) ? valorA : valorB;
+        document.getElementById("resultadoMaior").textContent = `O maior valor é: ${maior}`;
+    }
+
+    function mostrarMenor() {
+        const val1 = parseFloat(document.getElementById("val1").value);
+        const val2 = parseFloat(document.getElementById("val2").value);
+        const val3 = parseFloat(document.getElementById("val3").value);
+        const val4 = parseFloat(document.getElementById("val4").value);
+        if (isNaN(val1) || isNaN(val2) || isNaN(val3) || isNaN(val4)) {
+            document.getElementById("resultadoMenor").textContent = "Por favor, insira valores válidos.";
+            return;
+        }
+        const menor = Math.min(val1, val2, val3, val4);
+        document.getElementById("resultadoMenor").textContent = `O menor valor é: ${menor}`;
+    }
+
+    function verificarImpar() {
+        const numero = parseInt(document.getElementById("numeroImpar").value);
+        if (isNaN(numero)) {
+            document.getElementById("resultadoImpar").textContent = "Por favor, insira um número válido.";
+            return;
+        }
+        if (numero % 2 !== 0) {
+            document.getElementById("resultadoImpar").textContent = `O número ${numero} é ímpar.`;
+        } else {
+            document.getElementById("resultadoImpar").textContent = `O número ${numero} não é ímpar.`;
+        }
+    }
+</script>
+
+</body>
+</html>
